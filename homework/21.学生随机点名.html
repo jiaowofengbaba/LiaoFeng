@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <h1>{{studentName}}</h1>
+        <button @click="getName">点名</button>
+    </div>
+    <script src="vue.js"></script>
+    <script>
+        //当点击点名的时候触发点击事件，
+        new Vue({
+            el:"#app",
+            data:{
+                nameList:["水东流","烨爅 ","狗蛋","烽霸霸","徐凤年","第五轻柔",],
+                studentName:'同学名字'
+            },
+            methods:{
+                getRandom(){
+                    return Math.floor(Math.random() * this.nameList.length)
+                },
+                getName(){
+                    this.studentName = this.nameList[this.getRandom()];
+                }
+            }
+        })
+    </script>
+</body>
+
+</html> 

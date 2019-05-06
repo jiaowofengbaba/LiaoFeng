@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div id="app">
+		<form v-on:submit.prevent="insert">
+			<input v-model="newFruit" type="text">
+			<input type="submit" value="添加">
+		</form>
+		<ul>
+			<li v-for="(val,index) in list">
+				{{val}}
+				<span v-on:click="del(index)">删除</span>
+			</li>
+		</ul>
+	</div>
+	<script src="vue.js"></script>
+	<script>
+		new Vue({
+			el:"#app",
+			data:{
+				list:[
+				"香蕉",
+				"苹果",
+				"鸭梨" 
+				],
+				newFruit:""
+			},
+			methods:{
+				del:function(index){
+					this.list.splice(index,1);
+				},
+				insert:function(){
+					this.list.push(this.newFruit);
+				}	
+			}
+		})
+	</script>
+</body>
+</html>

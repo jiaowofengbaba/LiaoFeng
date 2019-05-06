@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+        <style>
+            .list li {
+                list-style: none;
+                float: left;
+                width: 30px;
+                height: 30px;
+                border: 1px solid red;
+                line-height: 30px;
+                text-align: center;
+            }
+            img{
+                width: 500px;
+                height: 300px;
+            }
+        </style>
+</head>
+
+<body>
+    <div id="app">
+        <img v-bind:src="url" alt="">
+        <ul class="list">
+            <li v-for="value,index in list" @click="changeImg(value.imgUrl)">{{value.label}}</li>
+        </ul>
+    </div>
+    <script src="vue.js"></script>
+    <script>
+        new Vue({
+            el:"#app",
+            data:{
+                url:"img/1.jpg",
+                list:[
+                    {
+                        label:"1",
+                        imgUrl:"img/1.jpg"
+                    },
+                    {
+                        label:"2",
+                        imgUrl:"img/2.jpg"
+                    },
+                    {
+                        label:"3",
+                        imgUrl:"img/3.jpg"
+                    },
+                    {
+                        label:"4",
+                        imgUrl:"img/4.jpg"
+                    },
+                    {
+                        label:"5",
+                        imgUrl:"img/5.jpg"
+                    },
+                ]
+            },
+            methods:{
+                changeImg(url){
+                    this.url = url;
+                }
+            }
+        })
+    </script>
+</body>
+
+</html> 

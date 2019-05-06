@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1></h1>
+    <button>我将选中有缘人</button>
+    <script>
+        var n=["王春鑫沙雕","沙雕王春鑫","沙雕网友","烽爸爸","廖烽","疯不觉","古龙",]
+        var btn=document.querySelector("button");
+        var h1=document.querySelector("h1");
+        btn.addEventListener("click",function(){ //addEventListener事件处理程序
+            var p=Math.floor(Math.random()*n.length);
+            h1.innerHTML=n[p];
+        });
+       
+    </script>
+</body>
+</html>

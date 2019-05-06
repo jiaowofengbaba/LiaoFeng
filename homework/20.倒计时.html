@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <span>{{tian}}</span>天
+        <span>{{xiaoshi}}</span>小时
+        <span>{{fenzhong}}</span>分
+        <span>{{miao}}</span>秒
+    </div>
+    <script src="vue.js"></script>
+    <script>
+        new Vue({
+            el: "#app",
+            data: {
+                tian: '',
+                xiaoshi: '',
+                fenzhong: '',
+                miao: '',
+            },
+            created() {
+                setInterval(() => {
+                    let target = new Date("222222-12-12").getTime(); //获取目标时间戳
+                    let now = new Date().getTime(); //获取当前时间戳
+                    let difference = target - now; //计算倒计时
+                    let allSeconds = Math.floor(difference / 1000); //计算距离目标时间总计有多少秒
+                    let allMinutes = Math.floor(allSeconds / 60);//计算距离目标还有多少分种
+                    let miao = allSeconds % 60; //秒==秒除60的余数
+                    let allHours = Math.floor(allMinutes / 60);//计算距离目标还有多少小时
+                    let fenzhong = allMinutes % 60;//分钟==分钟处以60的余数
+                    let tian = Math.floor(allHours / 24);//计算距离目标还有多少天
+                    let xiaoshi = allHours % 24; //小时等于小时除以24的余数
+                    this.tian = tian;
+                    this.xiaoshi = xiaoshi;
+                    this.fenzhong = fenzhong;
+                    this.miao = miao;
+                }, 1000)
+            }
+        })
+    </script>
+</body>
+
+</html> 

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <span class="day"></span>天
+    <span class="hours"></span>小时
+    <span class="minutes"></span>分钟
+    <span class="seconds"></span>秒
+    <script src="jquery.js"></script>
+    <script>
+        let target = new Date("2019-6-6").getTime();  //获取目标时间戳  
+        setInterval(() => {
+            let now = new Date().getTime();   //获取当前时间戳
+            let difference = target - now;  //计算倒计时还有多久
+            let allSeconds = Math.floor(difference/1000); //计算距离目标时间总计有多少秒
+            let allMinutes = Math.floor(allSeconds/60);	//计算距离目标时间还有多少分钟
+            let seconds = allSeconds%60;  //秒==秒除60的余数
+            let allHours = Math.floor(allMinutes/60);//计算距离目标时间还有多少小时
+            let minutes = allMinutes%60;  //分钟==分钟除60的余数
+            let day = Math.floor(allHours/24); //计算距离目标还有多少天
+            let hours = allHours%24;	//天==天除24的余数     
+            $(".day").text(day);
+            $(".hours").text(hours);
+            $(".minutes").text(minutes);
+            $(".seconds").text(seconds);
+        }, 1000)
+    </script>
+</body>
+
+</html>

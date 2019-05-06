@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="bootstrap.css">
+</head>
+<body>
+    <div id="app">
+        <!-- @submit是阻止表单提交的默认事件 -->
+        <form @submit.prevent="insert"> 
+            <!-- 用v-model来把data里的值给绑定 -->
+            <input type="text" v-model="formData.mingzhi">
+            <input type="text" v-model="formData.xingbie">
+            <input type="text" v-model="formData.nianling">
+            <input type="text" v-model="formData.chengji">
+            <!-- input type="sumit"具有提交表单的功能自带提交二字 -->
+            <input type="submit"> 
+        </form>
+        <table class="table table-striped">
+            <thead>
+                <!-- 就只是普通的文字没别的作用 -->
+                <th>姓名</th>
+                <th>性别</th>
+                <th>年龄</th>
+                <th>成绩</th>
+                <th>修改</th>
+                <th>删除</th>
+            </thead>
+            <tbody>
+                <!-- 用v-for分别输出data里的数值 -->
+                <tr v-for="value,index in list">
+                    <td>{{value.mingzhi}}</td>
+                    <td>{{value.xingbie}}</td>
+                    <td>{{value.nianling}}</td> 
+                    <td>{{value.chengji}}</td>
+                     <td>
+                         <!-- 修改的点击事件 -->
+                        <button @click="edit(index)" class="but but-info">修改</button>
+                    </td>
+                    <td>
+                        <!-- 删除的点击事件 -->
+                        <button @click="del(index)">删除</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <script src="vue.js"></script>
+    <script>
+        new Vue({
+            el:"#app",
+            data:{
+                formData:{
+                    mingzhi:'',
+                    xingbie:'',
+                    nianling:'',
+                    chengji:''
+                },
+                list:[]
+
+            },
+            methods:{
+                insert(){
+                    let obj = {};
+                    obj.mingzhi=this.formData.mingzhi;
+                    obj.xingbie=this.formData.xingbie;
+                    obj.nianling=this.formData.nianling;
+                    obj.chengji=this.formData.chengji;
+                    this.list.push(obj);//push可以为末尾添加值
+                },
+                del(i){
+                    if(confirm("是否删除数据？")){  //confirm是弹框的关键字（取消和删除）
+                        this.list.splice(i,1)//splice是删除的关键字
+                        
+                    }
+                },
+                edit(i){
+                    let chengji = prompt("请输入要修改的成绩");//prompt是修改的关键字
+                    this.list[i].chengji = chengji;
+                }
+            }
+        })
+    </script>
+</body>
+</html>
