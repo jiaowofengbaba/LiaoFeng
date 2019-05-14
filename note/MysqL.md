@@ -1,17 +1,16 @@
-###Mysql学习笔记
-#查询数据库服务器？
+### Mysql学习笔记
 show databases;(分号一定要加)
-#在数据库服务器中创建数据库
+# 在数据库服务器中创建数据库
 create database text；(text是数据库的名字)
- #创建一个数据库
+ # 创建一个数据库
 create database 数据库名 [其他选项];
 例如我们需要创建一个名为 samp_db 的数据库, 在命令行下执行以下命令:
 create database samp_db character set gbk;
-#删除数据库
+# 删除数据库
 drop database (database后面加数据库的名称)
-#选择要操作的数据库
+# 选择要操作的数据库
 use sys(use后面跟数据库名字)
-#退出服务器
+# 退出服务器
 exit;
 create table 表名(字段名称 字段类型,字段名称 字段类型......);
 下面是一个有着,学号，性名，性别，年纪，年龄，入学日期的表
@@ -21,14 +20,14 @@ create table student(
     -> sex varchar(2),
     -> age int,
     -> schooldate date);
-#查看当前数据库中有那些表
+# 查看当前数据库中有那些表
  show tables;
-#创建一个数据表
- #查看表中的数据
+# 创建一个数据表
+ # 查看表中的数据
  select * from student;(student是名字什么都行)
- #如何查看一个表的结构
+ # 如何查看一个表的结构
  desc 表名;
- #删除数据表
+ # 删除数据表
  drop table 表名;
 #对表的结构进行增、删、改、查的操作
 增加字段:
