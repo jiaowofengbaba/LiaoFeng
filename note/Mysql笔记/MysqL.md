@@ -1,5 +1,7 @@
 # Mysql学习笔记
+# 在cmd命令行中打开mysql 方法mysql -u root -p (有密码就在-p后面加上)
 ## 查询数据库
+用cmd命令行打开数据库mysql -u root -p
 show databases;(分号一定要加)
 ## 在数据库服务器中创建数据库
 create database text；(text是数据库的名字)

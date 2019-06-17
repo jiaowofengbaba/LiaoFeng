@@ -191,15 +191,3 @@ xxx代表编号或标记，可用git log查询//git checkout xxx
 14：删除远程库： git remote rm origin
 15：手动删除远程库：vi .git/config
 
-### 4月8日笔记
-1.将数组拆分成字符串
-var arr=["This","is","JavaScript","and","jQuery"]
-console.log(arr.join("!"))
-2.将字符串连接成数组
-var str = "This is JavaScript and jQuery";
-arr = str.split(",");
-console.log(arr)
-3.innerHTM
-innerHTM在js里面是双向功能获取对像的能容或向对象插入内容
-4.addEventListener事件处理程序
-可以用来计算点击事件之类的东西

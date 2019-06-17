@@ -1,4 +1,5 @@
-###
+### 下载egg
+npx egg-init egg-demo --type=simple
 # 3秒跳转网页
 <meta http-equiv="refresh" content="5;URL=/landing">
 ###点击子元素删除他的父级

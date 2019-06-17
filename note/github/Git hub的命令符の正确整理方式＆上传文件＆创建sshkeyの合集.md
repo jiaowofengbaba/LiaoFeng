@@ -1,25 +1,4 @@
-# Git  hub命令符的正确于都方式   
-* * *
-> sshkey密钥创建方式
-* * *
-* cat ~/.ssh/id_rsa.pub “查看本地文件夹是否有.ssh文件”  
-+ 如果没有需要用 ssh-keygen -t rsa -C "你的邮箱"  “来生成你的心的密钥”  
-* 然后打开.ssh文件夹将文件夹中 id_rsa.pub 文件打开复制里面的密钥  
-+ 打开Git hub官网进入你的账号，点击头像右面的三角号，找到settings单击打开  
-* 进入以后找到SSH and GPG keys单击进入，然后单击New SSH key进入生成页面  
-+ Tile文本框是给密钥设置一个标题，Key文本框是把刚刚复制的密钥粘贴到里面，然后点击Add SSH key创建密钥即可  
-* * *
->上传项目时需要用到的命令符 
-* * * 
-* git config --global user.email "里面填写邮箱"  
-+ git config --global user.name "里面填写用户姓名名称"  
-* 初始化当前目录，变成一个git仓库：git init  
-+ 将本地文件添加到本地仓库中：git add .  
-* 将本地文件提交到分支区中：git commit -m "自定义一个文字或单词"  
-+ 添加远程库，并在远程库中克隆：git remote add origin 填写远程库的链接  
-* 将本地的master分支推送到origin主机，同时指定origin为默认主机：git push origin master  
-* * *
-# 命令符合集   
+# Git  hub命令符的正确于都方式     
 > 一些常用的命令符  
 * * *
 1. 版本查询：git --version  
